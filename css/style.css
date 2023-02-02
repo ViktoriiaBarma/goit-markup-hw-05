@@ -152,10 +152,12 @@ a{
     font-weight: 500;  
     line-height: 1.5; 
     letter-spacing: 0.02em;
+
+    transition: color var(--form);
 }
 
 .nav-link:hover, .nav-link:focus{
-    color: var(--brand-color, purple);
+    color: var(--action-color, purple);
 }
 
 .active{
@@ -165,13 +167,16 @@ a{
 
 .active::after{
     position: absolute;
-
-    content: '';
-    bottom: 0;
+    bottom: -1px;
     left: 0;
     width: 100%;
     height: 4px;
+
+    content: '';
+
+    border-radius: 2px;
     background-color: var(--action-color);
+
 }
 .contact-item+.contact-item{
     margin-left: 40px;
@@ -186,9 +191,11 @@ a{
     font-style: normal;
     line-height: 1.5;
     letter-spacing: 0.02em;
+
+    transition: background-color var(--form);
 }
 .contact-link:hover, .contact-link:focus{
-    color: var(--brand-color,purple);
+    color: var(--action-color,purple);
     text-decoration: none;
 }
 
@@ -230,7 +237,7 @@ a{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
     width: 169px;
-    transition: background-color var(--form);
+    transition: background-color var(--form), box-shadow var(--form);
 }
 
 .order:hover, .order:focus {
@@ -255,17 +262,19 @@ a{
     height: 100%;
     background-color: rgba(46, 47, 66, 0.4);
 
+    visibility: visible;
     opacity: 1;
-    transition: opacity var(--form);
+    transition: opacity var(--form), visibility var(--form) ;
 }
 
 .backdrop.is-hidden{
     opacity: 0;
     pointer-events: none;
+    visibility: hidden;
 }
 
 .backdrop.is-hidden .modal{
-    transform: translate(-50%, -50%) scale(1.2);;
+    transform: translate(-50%, -50%) scale(1.2);
 }
 
 .modal{
@@ -290,7 +299,16 @@ a{
     top: 24px;
     right: 24px;
     padding: 0;
+    background-color: transparent;
     border: none;
+    cursor: pointer;
+
+    transition: background-color var(--form);
+}
+
+.button-close:hover{
+    background-color: var(--action-color);
+    border-radius: 50%;
 }
 
 
@@ -308,34 +326,8 @@ a{
     background-color: var(--light-bg);
     border-radius: 4px;
 
-
 }
 
-/*.icon-antenna{
-    background-image: url('../images/page1/antenna.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.icon-clock::before {
-    background-image: url('../images/page1/clock.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.icon-diagram::before {
-    background-image: url('../images/page1/diagram.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.icon-astronaut::before {
-    background-image: url('../images/page1/astronaut.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-}*/
-
-/*What are we doing section*/
 
 .work-list .list-item{
     border: 1px solid #E7E9FC;
@@ -365,6 +357,8 @@ a{
     border-radius: 50%;
 
     background-color: var(--brand-color);   
+
+    transition: background-color var(--form);
 }
 
 .team-link:hover, .team-link:focus{
@@ -405,6 +399,8 @@ a{
     border: 1px solid #8E8F99;
     border-radius: 4px;
     fill: #8E8F99;
+
+    transition: fill var(--form), border-color var(--form);
 }
 
 .customers-link:hover, .customers-link:focus{
@@ -417,7 +413,7 @@ a{
 }
 
 .customers-icon{
-        fill: #8E8F99;
+    fill: #8E8F99;
 }
 
 /*Footer-section*/
@@ -472,6 +468,8 @@ a{
     border-radius: 50%;
 
     background-color: rgba(255, 255, 255, 0.1);
+
+    transition: background-color var(--form);
 }
 
 .footer-link:hover, .footer-link:focus{
@@ -500,7 +498,8 @@ a{
     cursor: pointer;
     border: 1px solid #E7E9FC;
     border-radius: 4px;
-    transition: background-color var(--form);
+
+    transition: background-color var(--form), color var(--form), box-shadow var(--form);
 }
 
  .btn:hover, .btn:focus {
@@ -522,7 +521,7 @@ a{
 
 .project-link{
     display: block;
-
+    transition: box-shadow var(--form);
 }
 
 .project-link:hover, .project-link:focus {
@@ -573,9 +572,11 @@ a{
 }
 .project-text-wrap{
    padding: 32px 16px 32px;
-
 }
 
+.project-text-wrap .section-sub-title{
+    color: var(--headers-color);
+}
 .portfolio{
     padding-top: 96px;
 }
