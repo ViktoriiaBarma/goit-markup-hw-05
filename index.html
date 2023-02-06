@@ -412,6 +412,38 @@
     <!--Modal-->
     <div class="backdrop is-hidden" data-modal>
       <div class="modal">
+        <form class="form">
+          <h1 class="section-sub-title">
+            Leave your contacts and we will call you back
+          </h1>
+          <div class="form-field">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" autofocus />
+          </div>
+          <div class="form-field">
+            <label for="phone">Phone</label>
+            <input type="tel" name="phone" id="phone" />
+          </div>
+          <div class="form-field">
+            <label for="mail">Email</label>
+            <input type="email" name="mail" id="mail" />
+          </div>
+          <div class="form-field">
+            <label for="comment">Comment</label>
+            <textarea
+              name="comment"
+              id="comment"
+              cols="30"
+              rows="10"
+              placeholder="Text input"
+            >
+  Comment</textarea
+            >
+          </div>
+          <button type="submit" class="order">
+            <span class="text-order">Send</span>
+          </button>
+        </form>
         <button type="button" class="button-close" data-modal-close>
           <img src="./images/page1/close.svg" alt="close" class="icon-close" />
         </button>

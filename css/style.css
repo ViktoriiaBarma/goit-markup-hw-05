@@ -250,6 +250,7 @@ a{
     font-weight: 500;    
     color: var(--back-color, white);
     text-align: center;
+    line-height:1.5;
 }
 
 /*Modal section*/
@@ -310,6 +311,23 @@ a{
     background-color: var(--action-color);
     border-radius: 50%;
 }
+
+.form{
+    margin-right: 24px;
+    margin-left: 24px;
+}
+
+.form .section-sub-title{
+    margin-top: 72px;
+    margin-bottom: 16px;
+}
+
+.form-field{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+}
+
 
 
 
